@@ -1,0 +1,433 @@
+{
+  "schema_version": 1,
+  "course_id": "my_traceroute",
+  "source_of_scope": "README.md",
+  "language": "ko",
+  "lessons_per_week": 2,
+  "weeks_total": 12,
+  "lessons_total": 24,
+  "lesson_document_contract": "roadmap/weeks/Wxx.md + roadmap/08-session-protocol.md",
+  "source_rule": "Linked C originals should be reopened for direct citation; never quote from memory",
+  "weeks": [
+    {
+      "id": "W01",
+      "document": "roadmap/weeks/W01.md",
+      "theme": "네트워크와 traceroute 첫 관찰",
+      "lessons": [
+        {
+          "id": "W01-L01",
+          "title": "IPv4·TTL·ICMP 기본",
+          "rust_topics": [
+            "const",
+            "fn",
+            "for"
+          ],
+          "network_topic": "라우터 TTL 감소·ICMP 11/0",
+          "c_sources": [
+            "src/main.c",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "TTL/Probe 출력·라우터 원리 설명"
+        },
+        {
+          "id": "W01-L02",
+          "title": "Rust Toolchain·Cargo·기초 흐름 제어",
+          "rust_topics": [
+            "let/mut",
+            "fn",
+            "if",
+            "for",
+            "while",
+            "loop"
+          ],
+          "network_topic": "관리 TTL과 패킷 헤더 TTL 구분",
+          "c_sources": [
+            "src/main.c",
+            "incl/traceroute.h",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "직접 개선한 시뮬레이터·Cargo 검사·실제 관찰"
+        }
+      ]
+    },
+    {
+      "id": "W02",
+      "document": "roadmap/weeks/W02.md",
+      "theme": "Ownership과 상태 모델",
+      "lessons": [
+        {
+          "id": "W02-L01",
+          "title": "Stack·Heap·move·Borrowing",
+          "rust_topics": [
+            "String",
+            "&str",
+            "&T",
+            "&mut T"
+          ],
+          "network_topic": "메모리 수명과 패킷/설정 상태의 소유자",
+          "c_sources": [
+            "src/main.c",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "소유권 컴파일 실패/수정 설명"
+        },
+        {
+          "id": "W02-L02",
+          "title": "구조체와 설정 타입",
+          "rust_topics": [
+            "struct",
+            "impl",
+            "enum",
+            "Default"
+          ],
+          "network_topic": "C 관리자 상태와 Rust Config 모델",
+          "c_sources": [
+            "incl/traceroute.h",
+            "src/main.c"
+          ],
+          "task_outcome": "Config/ProbeProtocol·기본값 테스트"
+        }
+      ]
+    },
+    {
+      "id": "W03",
+      "document": "roadmap/weeks/W03.md",
+      "theme": "오류·파싱·CLI",
+      "lessons": [
+        {
+          "id": "W03-L01",
+          "title": "Option·Result·match·?",
+          "rust_topics": [
+            "입력 오류 분류"
+          ],
+          "network_topic": "주소·입력 검증, 도메인과 IP 구분",
+          "c_sources": [
+            "src/main.c"
+          ],
+          "task_outcome": "패닉 없는 변환 함수와 반례"
+        },
+        {
+          "id": "W03-L02",
+          "title": "CLI·DNS·주소 검증",
+          "rust_topics": [
+            "모듈",
+            "CLI 설계"
+          ],
+          "network_topic": "DNS 조회와 라우팅 단계 구분",
+          "c_sources": [
+            "src/main.c",
+            "src/set_port_ttl_probe.c"
+          ],
+          "task_outcome": "M1: 네트워크 없는 CLI와 입력 경계 테스트"
+        }
+      ]
+    },
+    {
+      "id": "W04",
+      "document": "roadmap/weeks/W04.md",
+      "theme": "바이트·슬라이스·Endian",
+      "lessons": [
+        {
+          "id": "W04-L01",
+          "title": "[u8;N]·Vec·&[u8]·bitwise",
+          "rust_topics": [
+            "Big Endian",
+            "IHL"
+          ],
+          "network_topic": "IPv4 IHL·Total Length·fragment offset",
+          "c_sources": [
+            "src/traceroute.c"
+          ],
+          "task_outcome": "바이트/길이 파서 계약과 경계 테스트"
+        },
+        {
+          "id": "W04-L02",
+          "title": "IPv4/UDP/ICMP 파싱",
+          "rust_topics": [
+            "Result 기반 안전 파싱"
+          ],
+          "network_topic": "IPv4/UDP/ICMP 헤더의 길이·checksum",
+          "c_sources": [
+            "src/check_packet.c",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "가변 IHL과 잘린 패킷 안전 파서"
+        }
+      ]
+    },
+    {
+      "id": "W05",
+      "document": "roadmap/weeks/W05.md",
+      "theme": "UDP 소켓",
+      "lessons": [
+        {
+          "id": "W05-L01",
+          "title": "UdpSocket·io::Result",
+          "rust_topics": [
+            "UDP 커널 헤더",
+            "TTL"
+          ],
+          "network_topic": "커널 UDP 헤더 구성·IPv4 TTL",
+          "c_sources": [
+            "src/main.c",
+            "src/send_recv_echo.c"
+          ],
+          "task_outcome": "승인 환경 TTL 송신/오류 처리"
+        },
+        {
+          "id": "W05-L02",
+          "title": "라우팅·ARP·다음 홉",
+          "rust_topics": [
+            "주소/인터페이스 사용"
+          ],
+          "network_topic": "IP 라우팅·다음 홉·ARP",
+          "c_sources": [
+            "src/set_addr_iface.c",
+            "src/main.c"
+          ],
+          "task_outcome": "캡처 TTL/포트와 next-hop 증거"
+        }
+      ]
+    },
+    {
+      "id": "W06",
+      "document": "roadmap/weeks/W06.md",
+      "theme": "Raw Socket",
+      "lessons": [
+        {
+          "id": "W06-L01",
+          "title": "socket2·Drop·권한",
+          "rust_topics": [
+            "ICMP 수신",
+            "Raw Socket"
+          ],
+          "network_topic": "Raw Socket과 ICMP 오류 수신",
+          "c_sources": [
+            "src/main.c",
+            "src/send_recv_echo.c"
+          ],
+          "task_outcome": "권한 오류/수신 길이 구분"
+        },
+        {
+          "id": "W06-L02",
+          "title": "수신 ICMP Type/Code",
+          "rust_topics": [
+            "enum/Result 분류"
+          ],
+          "network_topic": "ICMP Type/Code·수신 길이",
+          "c_sources": [
+            "src/handle_response.c",
+            "src/send_recv_echo.c"
+          ],
+          "task_outcome": "M2: 송신/ICMP 수신/pcap 증거"
+        }
+      ]
+    },
+    {
+      "id": "W07",
+      "document": "roadmap/weeks/W07.md",
+      "theme": "Quoted Packet",
+      "lessons": [
+        {
+          "id": "W07-L01",
+          "title": "Probe·Response 상태 타입",
+          "rust_topics": [
+            "ICMP 원본 IP",
+            "UDP 인용"
+          ],
+          "network_topic": "ICMP quoted IP/UDP 구조",
+          "c_sources": [
+            "src/check_packet.c"
+          ],
+          "task_outcome": "가변 IHL의 quoted packet 안전 파싱"
+        },
+        {
+          "id": "W07-L02",
+          "title": "Probe 매칭·지연·중복",
+          "rust_topics": [
+            "match",
+            "식별자 모델"
+          ],
+          "network_topic": "Probe 매칭, 지연·중복 응답",
+          "c_sources": [
+            "src/check_packet.c",
+            "src/handle_response.c"
+          ],
+          "task_outcome": "내 Probe만 매칭하고 나머지 거부"
+        }
+      ]
+    },
+    {
+      "id": "W08",
+      "document": "roadmap/weeks/W08.md",
+      "theme": "시간 측정",
+      "lessons": [
+        {
+          "id": "W08-L01",
+          "title": "Instant·Duration",
+          "rust_topics": [
+            "RTT 왕복 의미"
+          ],
+          "network_topic": "RTT 왕복 측정과 단조 시계",
+          "c_sources": [
+            "src/traceroute.c",
+            "src/handle_response.c"
+          ],
+          "task_outcome": "주입 가능한 시간 계산 테스트"
+        },
+        {
+          "id": "W08-L02",
+          "title": "Deadline·Timeout",
+          "rust_topics": [
+            "상태 전이",
+            "오류 분류"
+          ],
+          "network_topic": "Deadline·Timeout·늦은 응답",
+          "c_sources": [
+            "src/send_recv_echo.c",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "시간 경계·무관 응답 테스트"
+        }
+      ]
+    },
+    {
+      "id": "W09",
+      "document": "roadmap/weeks/W09.md",
+      "theme": "TTL trace 엔진",
+      "lessons": [
+        {
+          "id": "W09-L01",
+          "title": "for·while·loop 상태 전이",
+          "rust_topics": [
+            "홉별 Probe",
+            "타임아웃"
+          ],
+          "network_topic": "TTL별 Probe 제어와 ICMP 중간홉",
+          "c_sources": [
+            "src/traceroute.c"
+          ],
+          "task_outcome": "송신→수신→매칭→표시 엔진"
+        },
+        {
+          "id": "W09-L02",
+          "title": "UDP 도달 판정",
+          "rust_topics": [
+            "Result",
+            "enum 결과 처리"
+          ],
+          "network_topic": "UDP Port Unreachable 종료 판정",
+          "c_sources": [
+            "src/traceroute.c",
+            "src/check_packet.c"
+          ],
+          "task_outcome": "매칭된 3/3에서만 종료"
+        }
+      ]
+    },
+    {
+      "id": "W10",
+      "document": "roadmap/weeks/W10.md",
+      "theme": "ICMP Echo",
+      "lessons": [
+        {
+          "id": "W10-L01",
+          "title": "ICMP ID/Sequence·Checksum",
+          "rust_topics": [
+            "Echo Request/Reply"
+          ],
+          "network_topic": "ICMP Echo Request/Reply 8/0·0/0",
+          "c_sources": [
+            "src/traceroute.c",
+            "incl/traceroute.h"
+          ],
+          "task_outcome": "ICMP 송신/매칭/테스트"
+        },
+        {
+          "id": "W10-L02",
+          "title": "두 프로토콜 공통화",
+          "rust_topics": [
+            "trait vs enum",
+            "모듈 분리"
+          ],
+          "network_topic": "UDP vs ICMP Echo 응답·종료 차이",
+          "c_sources": [
+            "src/main.c",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "M3: 두 모드 정확성·pcap"
+        }
+      ]
+    },
+    {
+      "id": "W11",
+      "document": "roadmap/weeks/W11.md",
+      "theme": "C 코드 리뷰",
+      "lessons": [
+        {
+          "id": "W11-L01",
+          "title": "테스트·안전한 slice",
+          "rust_topics": [
+            "잘린/무관한 패킷"
+          ],
+          "network_topic": "잘린 IPv4/ICMP/quoted packet 안전성",
+          "c_sources": [
+            "src/check_packet.c",
+            "src/set_addr_iface.c",
+            "src/send_recv_echo.c"
+          ],
+          "task_outcome": "위험 가설·결함 재현 구별"
+        },
+        {
+          "id": "W11-L02",
+          "title": "회귀/CI",
+          "rust_topics": [
+            "cargo test/fmt/clippy"
+          ],
+          "network_topic": "무관·지연 응답의 회귀 테스트",
+          "c_sources": [
+            "src/traceroute.c",
+            "src/check_packet.c"
+          ],
+          "task_outcome": "오프라인 회귀 검사"
+        }
+      ]
+    },
+    {
+      "id": "W12",
+      "document": "roadmap/weeks/W12.md",
+      "theme": "격리 다중 홉",
+      "lessons": [
+        {
+          "id": "W12-L01",
+          "title": "Linux VM/실험 관리",
+          "rust_topics": [
+            "netns",
+            "veth",
+            "TTL"
+          ],
+          "network_topic": "Linux 격리 라우터·2+홉 실험",
+          "c_sources": [
+            "src/main.c",
+            "src/traceroute.c"
+          ],
+          "task_outcome": "2+ 홉 통제된 실험/pcap"
+        },
+        {
+          "id": "W12-L02",
+          "title": "리팩터링과 최종 검증",
+          "rust_topics": [
+            "독립 설계",
+            "설명"
+          ],
+          "network_topic": "NAT/ECMP/비대칭 경로·ICMP 제한",
+          "c_sources": [
+            "src/*.c",
+            "incl/traceroute.h"
+          ],
+          "task_outcome": "M4: 재현 가능한 CLI·독립 구현 시험"
+        }
+      ]
+    }
+  ]
+}

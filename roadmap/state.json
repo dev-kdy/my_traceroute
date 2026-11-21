@@ -1,0 +1,152 @@
+{
+  "schema_version": 1,
+  "status_authority": "roadmap/state.json",
+  "origin": "Imported from user-provided ChatGPT learning conversation and GitHub roadmap review; not local Antigravity command output",
+  "initial_import_date": "2026-11-21",
+  "updated_at": "2026-11-21",
+  "course_id": "my_traceroute",
+  "current_week": "W01",
+  "current_lesson": "W01-L02",
+  "current_task": {
+    "id": "W01-L02-T01",
+    "description": "Run rustup show active-toolchain in the student's actual IDE terminal; provide output and explain rustc vs rustup",
+    "status": "awaiting_student"
+  },
+  "lesson_status": {
+    "W01-L01": "needs_review",
+    "W01-L02": "in_progress",
+    "W02-L01": "not_started",
+    "W02-L02": "not_started",
+    "W03-L01": "not_started",
+    "W03-L02": "not_started",
+    "W04-L01": "not_started",
+    "W04-L02": "not_started",
+    "W05-L01": "not_started",
+    "W05-L02": "not_started",
+    "W06-L01": "not_started",
+    "W06-L02": "not_started",
+    "W07-L01": "not_started",
+    "W07-L02": "not_started",
+    "W08-L01": "not_started",
+    "W08-L02": "not_started",
+    "W09-L01": "not_started",
+    "W09-L02": "not_started",
+    "W10-L01": "not_started",
+    "W10-L02": "not_started",
+    "W11-L01": "not_started",
+    "W11-L02": "not_started",
+    "W12-L01": "not_started",
+    "W12-L02": "not_started"
+  },
+  "week_status": {
+    "W01": "in_progress",
+    "W02": "not_started",
+    "W03": "not_started",
+    "W04": "not_started",
+    "W05": "not_started",
+    "W06": "not_started",
+    "W07": "not_started",
+    "W08": "not_started",
+    "W09": "not_started",
+    "W10": "not_started",
+    "W11": "not_started",
+    "W12": "not_started"
+  },
+  "environment_reported": {
+    "os": "macOS",
+    "arch": "Apple Silicon",
+    "ide": "JetBrains Rust IDE",
+    "rustc": "1.100.0",
+    "cargo": "1.100.0",
+    "edition": null,
+    "cargo_toml_location": null,
+    "local_toolchain": null
+  },
+  "evidence": [
+    {
+      "id": "E-W01-01",
+      "lesson": "W01-L01",
+      "kind": "student_code_answer",
+      "status": "user_reported",
+      "fact": "Removed unused mut: let domain = String::from(\"example.com\");",
+      "caution": "Reported source line; no current repository src/main.rs verified"
+    },
+    {
+      "id": "E-W01-02",
+      "lesson": "W01-L01",
+      "kind": "program_output",
+      "status": "user_reported",
+      "fact": "Output example.com; TTL 1,2,3 with probes 1,2,3 per hop; trace finish!",
+      "caution": "No complete cargo build metadata or exit status"
+    },
+    {
+      "id": "E-W01-03",
+      "lesson": "W01-L01",
+      "kind": "tool_version",
+      "status": "user_reported",
+      "fact": "rustc 1.100.0 and cargo 1.100.0 version output copied by learner",
+      "caution": "Not rerun in Antigravity"
+    },
+    {
+      "id": "E-W01-04",
+      "lesson": "W01-L01",
+      "kind": "cargo_fmt",
+      "status": "unverified",
+      "fact": "cargo fmt --check command was shown without separate exit code",
+      "caution": "Must check exit status 0 before PASS"
+    },
+    {
+      "id": "E-W01-05",
+      "lesson": "W01-L01",
+      "kind": "cargo_clippy",
+      "status": "user_reported",
+      "fact": "cargo clippy -- -D warnings displayed Checking and Finished dev profile",
+      "caution": "Success-looking log; exact exit code not presented"
+    },
+    {
+      "id": "E-W01-06",
+      "lesson": "W01-L01",
+      "kind": "packet_capture",
+      "status": "unverified",
+      "fact": "No verified system traceroute or ICMP capture yet",
+      "caution": "Never claim a real network packet was observed"
+    },
+    {
+      "id": "E-W01-07",
+      "lesson": "W01-L02",
+      "kind": "toolchain_active",
+      "status": "unverified",
+      "fact": "rustup show active-toolchain not submitted yet",
+      "caution": "Student must supply or approve actual local check"
+    }
+  ],
+  "assessments": [
+    {
+      "lesson": "W01-L01",
+      "attempt": 1,
+      "score": 55,
+      "max_score": 100,
+      "status": "needs_review",
+      "recorded_by": "prior ChatGPT tutor",
+      "notes": "const vs let mut correct; TTL drop concept partly correct, ICMP Type/Code name incomplete; star interpretation lacks limitations; C TTL header update initially unknown"
+    },
+    {
+      "lesson": "W01-L01",
+      "attempt": 2,
+      "score": null,
+      "max_score": 100,
+      "status": "needs_review",
+      "notes": "Student later answered first-router TTL=1 scenario correctly. Independent C state/buffer explanation still pending"
+    }
+  ],
+  "unresolved": [
+    "Confirm cargo fmt --check exit code 0",
+    "Inspect the student's actual Cargo.toml and edition without overwriting local work",
+    "Complete W01-L02 Rust syntax/function/if/while/loop one small task at a time",
+    "Independently explain C ping_loop update_echopkt fill_packet and TTL 3-layer state",
+    "Interpret system traceroute or controlled alternative experiment for TTL/ICMP/RTT/star",
+    "Conduct W01 final four-question independent assessment after all phases"
+  ],
+  "notes": "Current remote GitHub history has roadmap docs; the existing local Rust crate was not confirmed in this remote repository. Do not run cargo new in repo root without locating original local crate.",
+  "next_week_gate": "W01 must pass every gate in roadmap/04-assessment.md before W02"
+}

@@ -2,6 +2,16 @@
 
 **구분 규칙:** [README]=프로젝트 목표, [C 원본]=사례의 실제 구현, [공식]=Rust/RFC/OS 명세, [설계]=개선 제안, [실측]=자신이 기록한 실행 결과. 다른 범주를 섞어서 확정적 표현을 하지 않는다.
 
+## Antigravity CLI 공식 자료
+
+- [Google Antigravity CLI: Getting started](https://antigravity.google/docs/cli/tutorial/) — `agy` 실행과 초기 프롬프트.
+- [Google Antigravity: Rules](https://antigravity.google/docs/rules-workflows/) — 루트 `AGENTS.md`, 프로젝트·디렉터리 규칙 발견.
+- [Google Antigravity CLI: Best Practices](https://antigravity.google/docs/cli/best-practices/) — 작업 공간 지침 활용.
+- [Google Antigravity CLI: Agent settings](https://antigravity.google/docs/agent-settings) — 명령 실행 권한과 승인 모드.
+- [Google Antigravity CLI: Features](https://antigravity.google/docs/cli/features/) — `/resume`/`/context` 등. 세션 재개가 학습 상태 기록을 대체하지는 않는다.
+
+**규칙 설계 판단 [설계]:** 이 저장소는 여러 중복 `GEMINI.md`/`.agents/rules`를 만들지 않고 루트 `AGENTS.md`로 [세션 계약](08-session-protocol.md)과 [상태 파일](state.json)을 연결한다. 문서·상태가 실제 로컬 파일보다 오래되었다면 이를 바로잡아야 한다.
+
 ## Rust 공식 자료(버전·Edition을 확인한 뒤 사용)
 
 | 범위 | 문서 |

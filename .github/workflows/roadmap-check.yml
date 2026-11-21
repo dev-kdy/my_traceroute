@@ -1,0 +1,27 @@
+name: Validate roadmap
+
+on:
+  push:
+    paths:
+      - "AGENTS.md"
+      - "README.md"
+      - "roadmap/**"
+      - ".github/workflows/roadmap-check.yml"
+  pull_request:
+    paths:
+      - "AGENTS.md"
+      - "README.md"
+      - "roadmap/**"
+      - ".github/workflows/roadmap-check.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  roadmap-integrity:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Verify roadmap documents, lesson IDs, state, and links
+        run: python3 roadmap/tools/check_roadmap.py

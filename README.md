@@ -12,6 +12,14 @@
 
 > 원본 C 구현과 공개 강의자료는 **학습용 참고 자료**다. 원본을 무조건 직역하지 않고 Rust의 타입·소유권·에러 모델을 활용한다. 패킷 전송은 본인 소유/승인된 환경에서만 실행한다.
 
+## IDE 터미널의 Antigravity CLI로 학습하기
+
+이 저장소는 **학생이 스스로 구현하는 학습 프로젝트**이다. 루트 [AGENTS.md](AGENTS.md)가 Antigravity CLI의 튜터 동작·정답 선공개 금지·안전 규칙을 제공한다. 실제 학습 전에 [Antigravity CLI 시작 가이드](roadmap/07-antigravity-cli.md) 및 [현재 상태](roadmap/state.json)를 확인한다.
+
+JetBrains IDE 터미널에서 실제 Git 루트와 기존 Cargo 프로젝트를 확인한 뒤 **저장소 루트에서** `agy`를 시작한다. 에이전트에게 `"학습 이어가자. AGENTS.md와 state.json을 읽고 다음 과제 하나만 제시해."`라고 요청한다. 파일을 아직 확인하지 않고 `cargo new`를 실행하여 이미 작성한 로컬 Rust 프로젝트를 덮거나 중첩 생성하지 않는다.
+
+**원칙:** [12주 상세 로드맵](roadmap/README.md)의 주차 목표는 유지, [24차시 인덱스](roadmap/curriculum.json)와 [학습 상태](roadmap/state.json)로 언제든 수업을 재개한다. 원격 GitHub에 Rust 코드가 없다는 사실은 로컬에서 작성한 코드가 없다는 뜻은 아니다.
+
 ## 상세 실행 로드맵 (12주·24차시)
 
 기존 주차별 목표를 실제 실습·코드 리뷰·패킷 검증·시험과 연결한 [**roadmap/ 학습 가이드**](roadmap/README.md)를 제공합니다. 현재 학습 위치와 미검증 항목은 [진도 원장](roadmap/01-progress.md)을 참고하세요. **정답 코드 선공개 없이 직접 구현하는 학습 방식**을 따릅니다.

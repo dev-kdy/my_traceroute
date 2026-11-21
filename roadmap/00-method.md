@@ -1,5 +1,9 @@
 # 학습 방법 — 독립적으로 traceroute를 완성하기 위한 교수 계약
 
+## Antigravity CLI 운영
+
+이 문서의 학습 원칙은 루트 [AGENTS.md](../AGENTS.md)와 [CLI 실행](07-antigravity-cli.md), [단계별 세션 계약](08-session-protocol.md)을 통해 **실제 터미널 에이전트 행동**으로 적용한다. 현재 주차와 다음 과제는 [state.json](state.json), 24차시 목표는 [curriculum.json](curriculum.json)에서 확인한다. AI가 자동으로 코드 수정·진도 이동·명령 실행을 하지 않도록, **학습자 제출 → 튜터 검토 → 검증 → 저장 승인** 순서를 지킨다.
+
 ## 학습의 성공 정의
 
 최종 결과는 단순히 `traceroute`와 비슷한 문장을 출력하는 CLI가 아니다. 학습자는 **(1) 패킷·프로토콜을 설명 (2) Rust 타입·소유권으로 안전하게 구현 (3) 실제 ICMP를 해당 Probe와 연결 (4) 실패와 관측 한계를 이해 (5) 새로운 조건에서 스스로 수정**할 수 있어야 한다.

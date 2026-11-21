@@ -1,5 +1,9 @@
 # 학습 평가 기준 — 일정보다 증거를 우선한다
 
+## Antigravity CLI 상태 평가 절차
+
+[`state.json`](state.json)의 `lesson_status`/`week_status`가 평가의 **기계가 읽는 현재 상태**다. 에이전트는 [`curriculum.json`](curriculum.json)에서 현재 차시 ID를 확인하고 아래 Exit Gate와 **실제 증거**를 대조한다. 테스트 도구의 출력만으로 독립 구현/프로토콜 이해를 자동 합격 처리하지 않는다. 평가 후에는 변경안·근거·오답을 제시하고 학생 승인 후 `state.json`/`journal/Wxx.md`를 일관되게 갱신한다. [상태 전이·기록 프로토콜](08-session-protocol.md) 참고.
+
 ## 1. 차시마다 4문항, 답변 전 정답 비공개
 
 - **Rust 1문항(25점):** 개념을 정의하는 데 그치지 않고 실제 코드의 타입/제어 흐름을 예측.

@@ -2,6 +2,19 @@
 
 > **수료 목표:** 외부 구현을 베끼지 않고 Rust로 IPv4 UDP traceroute와 ICMP Echo 모드를 스스로 설계·구현하고, 패킷 캡처와 테스트로 의미를 검증한다.
 
+## CLI에서 학습하는 가장 빠른 경로
+
+1. **루트 [AGENTS.md](../AGENTS.md)** — Antigravity가 자동 발견할 튜터 행동/권한 규칙.
+2. **[Antigravity CLI 실행 가이드](07-antigravity-cli.md)** — JetBrains IDE 터미널의 `agy` 실행, 파일 문맥 로드, 안전한 사용법.
+3. **[24차시 메타데이터](curriculum.json) + [현재 진도 SSOT](state.json)** — 이전 채팅에 의존하지 않고 재개.
+4. **[수업 상태 기계](08-session-protocol.md) + [문맥 인덱스](10-context-map.md)** — 한 턴 한 과제·정답 금지·증거 갱신.
+5. **[과거 대화 이력](01-progress.md) + [W01 기록](journal/W01.md)** — 이미 한 실습을 불필요하게 반복하지 않음.
+6. **[자동 검사 스크립트](tools/check_roadmap.py) + [2차 점검 보고서](09-review-report.md)** — 문서 및 학습 상태 무결성 확인.
+
+**시작 명령(기존 로컬 프로젝트/작업 트리를 확인한 후):** 저장소 루트에서 `agy`. 첫 프롬프트는 `"my_traceroute 학습을 이어가자. 현재 진도와 미확인을 읽고 다음 실습 하나만 제시해."`. [공식 Antigravity Rules](https://antigravity.google/docs/rules-workflows/)가 루트 `AGENTS.md` 같은 프로젝트 규칙을 지원한다.
+
+**두 진실을 구별:** `state.json`은 현재 진도, `01-progress.md`는 기존 ChatGPT 대화에서 넘겨받은 **이력 스냅샷**이다. 실제 로컬 코드/명령 출력보다 어떤 문서도 우선하지 않는다. **학생의 실제 구현 코드가 없거나 위치가 불명확하면 자동 생성하지 않는다.**
+
 - [정본 README](../README.md): 12주 목표·마일스톤의 최상위 기준
 - [학습 운영 원칙](00-method.md): 튜터 힌트·실습·복습·Java 비교
 - [현재 진도 및 미확인 증거](01-progress.md): W01 중간에서 재개

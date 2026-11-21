@@ -2,6 +2,22 @@
 
 > 일자·환경·코드·실측·오답을 남겨 학습이 대화를 넘어 계속될 수 있도록 한다. '안 했다'를 체크해도 괜찮지만 '안 했는데 성공'은 금지.
 
+## Antigravity CLI용 시작 템플릿
+
+JetBrains IDE에서 **Git 루트**를 확인하고 `agy`를 실행한 뒤 다음을 입력한다.
+
+```text
+my_traceroute 학습을 이어가자.
+루트 AGENTS.md와 roadmap/state.json, roadmap/curriculum.json,
+roadmap/08-session-protocol.md, 현재 roadmap/weeks/Wxx.md를 확인해.
+roadmap/01-progress.md는 과거 ChatGPT 이력으로만 참고해.
+로컬 Rust crate와 Git 상태를 읽기만 하되 자동으로 수정하지 마.
+현재 이해한 부분/미검증 항목/다음 한 과제만 정리하고 내 답을 기다려.
+완성 코드는 공개하지 말고 내가 먼저 구현하도록 H0/H1 힌트를 사용해.
+```
+
+수업 종료 시 학생이 제공한 증거를 정리해 `state.json`/`journal/Wxx.md` **변경안을 먼저 제시**하고, 승인 후에만 저장하도록 한다. [CLI 사용 가이드](07-antigravity-cli.md)와 [세션 계약](08-session-protocol.md) 참고.
+
 ## A. 다음 차시 시작 프롬프트
 
 ```text
