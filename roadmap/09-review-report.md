@@ -60,6 +60,15 @@
 - [ ] 실제 `cargo fmt` 종료코드, 패킷 관찰/대체 분석, C `update_echopkt` 독립 설명이 W01 게이트로 유지되는지 확인.
 - [ ] `python3 roadmap/tools/check_roadmap.py`를 사용자의 체크아웃에서 실행해 성공 여부 확인.
 
+## 2차 독립 점검에서 실제 확인한 결과 (2026-11-21)
+
+- **[GitHub Actions 관찰]** [Validate roadmap 워크플로 #1](https://github.com/dev-kdy/my_traceroute/actions/runs/44905986041): 커밋 `645e18a5c580c3400e378a6f3080b33bce17d1ad`에서 **conclusion: success**. 기존 필수 문서·24차시·state.json 스키마·내부 Markdown 링크를 검사.
+- **[GitHub 저장소 파일 재조회]** `AGENTS.md`, `README.md`, `roadmap/README.md`, `state.json`, `curriculum.json`, `W01.md` 등 핵심 파일에서 **15/15 교차 점검 통과**. W01-L02와 Toolchain 대기, W01-L01 needs_review, fmt/packet unverified 유지.
+- **[외부 C 원본 재조회]** `main.c`/`traceroute.c`/`check_packet.c`/`send_recv_echo.c`/`traceroute.h`의 경로 및 핵심 함수 조건을 다시 열어 **8/8 근거 확인**: main 호출 순서, `ping_loop` 외부 조건, fill→send 순서, TTL 갱신 순서, 마지막 IP 주소 종료, Raw ICMP receive, 고정 오프셋, 기본 TTL/Probe 상수. 파일별 SHA는 [source-snapshot.json](source-snapshot.json)에서 관리.
+- **[보완된 수동 시험]** [11-agent-acceptance.md](11-agent-acceptance.md)에 첫 진도 복구, 정답 유출 방지, 원본 접근 불가, 네트워크 권한 승인, 새 세션 재개, 학습 기록 보존 등의 실제 CLI 수동 검증 시나리오를 추가. **실제 `agy` 사용자 머신 실행은 아직 NOT_RUN**.
+
+**주의:** 위 워크플로 #1은 추가 인수 테스트와 원본 스냅샷 문서가 만들어지기 **전 커밋**의 결과다. 이후 변경은 새 GitHub Actions 워크플로 결과를 다시 확인해야 한다.
+
 ## 결론
 
 문서 구조를 **사람이 읽는 12주 계획 + 기계가 읽는 24차시 지도/진도 + Antigravity 자동 규칙 + 수업 세션 절차 + 증거/품질 검사**로 개선했다. 다만 **수업의 품질과 실제 네트워크 구현의 완성은 아직 검증되지 않았다.** 사용자 로컬 Antigravity CLI 환경에서 시작/재개/힌트/권한/학습 상태 기록을 한 번씩 직접 확인한 뒤 미흡점을 수정한다.

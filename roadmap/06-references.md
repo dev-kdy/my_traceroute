@@ -47,6 +47,8 @@
 - Linux: [raw(7)](https://man7.org/linux/man-pages/man7/raw.7.html), [ip(7)](https://man7.org/linux/man-pages/man7/ip.7.html), [capabilities(7)](https://man7.org/linux/man-pages/man7/capabilities.7.html), [ip-netns(8)](https://man7.org/linux/man-pages/man8/ip-netns.8.html).
 - 캡처: [Wireshark User Guide](https://www.wireshark.org/docs/wsug_html_chunked/), [Wireshark Display Filter Reference](https://www.wireshark.org/docs/dfref/).
 
+**원본 파일 SHA 고정:** [C 참고 원본 스냅샷](source-snapshot.json). **실제 IDE 튜터 검증:** [Antigravity 인수 테스트](11-agent-acceptance.md). 원본 함수 설명은 C 원본을 다시 열어 확인하는 것을 우선한다.
+
 ## 프로젝트/C 참고 소스
 
 - [학습 프로젝트의 정본 README](../README.md)

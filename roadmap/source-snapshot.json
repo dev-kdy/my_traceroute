@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "checked_on": "2026-11-21",
+  "upstream": "Dauie/traceroute",
+  "upstream_default_branch": "master",
+  "upstream_git_tree_sha": "43674f6030fe8a433d6193f088781bb82c8e45d7",
+  "purpose": "Versioned reference fingerprints for source analysis; these are upstream Git blob SHAs, not a copy or license grant",
+  "code_is_stored_here": false,
+  "files": {
+    "incl/traceroute.h": "83b0de17d1d19df409814d92c7e1784330e7947c",
+    "src/main.c": "c57e8c42358545f3a5aab53dd5725ccc754c363a",
+    "src/traceroute.c": "3aa556a812196d3a35875a37aa6497aa2359b166",
+    "src/send_recv_echo.c": "f261175bf98655f92eb851518973854669949afc",
+    "src/check_packet.c": "1d9fbc15c5e7f06c377d222ccb34692646342ec6",
+    "src/handle_response.c": "ab960438bdaf35abfab07b501fbbc2897e55ffb3",
+    "src/set_addr_iface.c": "9db028844f133695d3e3aca8efcf00f6d6f14f23",
+    "src/set_port_ttl_probe.c": "3b42f9527d1808276686b6eccf47e43e0cd34843",
+    "src/useage.c": "19ac56bde03969c4a468187c1d8671d4a3b83528"
+  },
+  "guidance": "Before quoting code in a new CLI session fetch upstream file and compare SHA or cite commit/tree snapshot; if offline mark source inaccessible and use prior analysis as secondary, not fresh verification"
+}

@@ -75,9 +75,11 @@ def main() -> int:
         "roadmap/07-antigravity-cli.md",
         "roadmap/08-session-protocol.md",
         "roadmap/09-review-report.md",
+        "roadmap/11-agent-acceptance.md",
         "roadmap/10-context-map.md",
         "roadmap/curriculum.json",
         "roadmap/state.json",
+        "roadmap/source-snapshot.json",
         "roadmap/journal/W01.md",
     ] + [f"roadmap/weeks/W{i:02d}.md" for i in range(1, 13)]
     for relative in required:
@@ -85,6 +87,15 @@ def main() -> int:
 
     course = read_json(ROADMAP / "curriculum.json")
     state = read_json(ROADMAP / "state.json")
+    snapshot = read_json(ROADMAP / "source-snapshot.json")
+    source_files = snapshot.get("files", {})
+    check(snapshot.get("upstream") == "Dauie/traceroute", "source snapshot: unknown upstream")
+    check(isinstance(source_files, dict) and len(source_files) >= 9, "source snapshot: expected at least 9 C source fingerprints")
+    if isinstance(source_files, dict):
+        for source_path, sha in source_files.items():
+            check(source_path.startswith(("src/", "incl/")), f"source snapshot: invalid path {source_path}")
+            check(isinstance(sha, str) and re.fullmatch(r"[0-9a-f]{40}", sha) is not None,
+                  f"source snapshot: invalid SHA for {source_path}")
     weeks = course.get("weeks", [])
     check(isinstance(weeks, list) and len(weeks) == 12, "curriculum must have 12 weeks")
     check(course.get("lessons_total") == 24, "curriculum lessons_total must be 24")
@@ -116,6 +127,8 @@ def main() -> int:
                 check(isinstance(lesson.get(key), list) and bool(lesson.get(key)), f"{lid}: missing {key}")
             for source in lesson.get("c_sources", []) if isinstance(lesson.get("c_sources"), list) else []:
                 check(isinstance(source, str) and source.startswith(("src/", "incl/")), f"{lid}: invalid C source {source}")
+                if isinstance(source, str) and "*" not in source and isinstance(source_files, dict):
+                    check(source in source_files, f"{lid}: C source missing from snapshot: {source}")
         path = ROOT / f"roadmap/weeks/{expected_week}.md"
         if path.is_file():
             body = path.read_text(encoding="utf-8")

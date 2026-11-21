@@ -85,6 +85,10 @@ CLI의 `/resume`, `/context` 등은 [공식 Feature Overview](https://antigravit
 - Rust 프로젝트가 GitHub 루트에 아직 없다면 현재 로컬 `Cargo.toml`을 찾고 **절대 자동 중첩 `cargo new` 하지 않는다**.
 - `.agents/` 룰/`GEMINI.md`를 별도로 작성할 때에는 기존 루트 규칙과 충돌·중복 여부부터 검토한다.
 
+## 8. 학습 튜터의 실제 동작 검사
+
+[인수 테스트](11-agent-acceptance.md)의 A01(현 진도 복원), A04(기존 Cargo 보존), A05(완성 코드 금지), A09(재시작), S02(권한 승인), T01(C 원본 전체 흐름)를 사용자의 **실제 CLI**에서 확인한다. 문서 CI 성공만으로 이 테스트까지 성공한 것으로 기록하지 않는다.
+
 ## 8. 최초 수업용 복사 프롬프트
 
 ```text

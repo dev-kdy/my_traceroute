@@ -38,6 +38,8 @@ You are working inside **my_traceroute**, an educational repository. This is NOT
 - [CLI setup](roadmap/07-antigravity-cli.md)
 - [Session protocol](roadmap/08-session-protocol.md)
 - [Fast context map](roadmap/10-context-map.md)
+- [Agent acceptance tests](roadmap/11-agent-acceptance.md)
+- [C source fingerprints](roadmap/source-snapshot.json)
 - [Assessment](roadmap/04-assessment.md)
 - [Detailed course](roadmap/weeks/W01.md)
 

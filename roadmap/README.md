@@ -13,6 +13,8 @@
 
 **시작 명령(기존 로컬 프로젝트/작업 트리를 확인한 후):** 저장소 루트에서 `agy`. 첫 프롬프트는 `"my_traceroute 학습을 이어가자. 현재 진도와 미확인을 읽고 다음 실습 하나만 제시해."`. [공식 Antigravity Rules](https://antigravity.google/docs/rules-workflows/)가 루트 `AGENTS.md` 같은 프로젝트 규칙을 지원한다.
 
+**CLI 실제 동작 점검:** [Antigravity 인수 테스트 15개 시나리오](11-agent-acceptance.md). **외부 C 소스 기준 버전:** [원본 SHA 스냅샷](source-snapshot.json). 문서 자동 검사 성공과 에이전트 현장 학습 품질은 별도 검증 대상이다.
+
 **두 진실을 구별:** `state.json`은 현재 진도, `01-progress.md`는 기존 ChatGPT 대화에서 넘겨받은 **이력 스냅샷**이다. 실제 로컬 코드/명령 출력보다 어떤 문서도 우선하지 않는다. **학생의 실제 구현 코드가 없거나 위치가 불명확하면 자동 생성하지 않는다.**
 
 - [정본 README](../README.md): 12주 목표·마일스톤의 최상위 기준
